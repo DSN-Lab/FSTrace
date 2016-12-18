@@ -95,6 +95,33 @@ int main(){
 	syscall(SYS_ioprio_set);
 	inotify_add_watch(-10,NULL,-10);
 	inotify_rm_watch(-100,-100);
+	unlinkat(-10,NULL,-10);
+	renameat(-10,NULL,-10,NULL);
+	rename(NULL,NULL);
+	link(NULL,NULL);
+	linkat(-10,NULL,-10,NULL,-10);
+	symlinkat(NULL,-10,NULL);
+	symlink(NULL,NULL);
+	readlink(NULL,NULL,10);
+	readlinkat(-10,NULL,NULL,-10);
+	chmod(NULL,777);
+	fchmod(-10,777);
+	fchmodat(-10,NULL,777,-1);
+	access(NULL,-10);
+	syscall(SYS_sync_file_range);
+	syscall(SYS_splice);
+	syscall(SYS_tee);
+	syscall(SYS_open);
+	syscall(SYS_creat);
+	syscall(SYS_openat);
+	syscall(SYS_mkdir);
+	syscall(SYS_mkdirat);
+	syscall(SYS_mknod);
+	syscall(SYS_mknodat);
+	syscall(SYS_chown);
+	syscall(SYS_fchown);
+	syscall(SYS_lchown);
+	syscall(SYS_fchownat);
 
 	return 0;
 }
